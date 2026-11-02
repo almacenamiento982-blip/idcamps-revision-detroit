@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow"><title>Revisión Detroit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f3f2f0;--panel:#fff;--ink:#16161a;--ink2:#4a4a52;--muted:#7c7c85;--line:#e1dfda;--oro:#a8842f;--ok:#1d7a4a;--ok-s:#e3f3ea;--warn:#9a6a00;--warn-s:#fbf1d9;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111113;--panel:#1b1b1f;--ink:#f2f1ee;--ink2:#c6c5c0;--muted:#8d8c88;--line:#2e2e33;--oro:#d2ad55;--ok:#5cc98c;--ok-s:#14301f;--warn:#e7b84a;--warn-s:#352a10;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111113;--panel:#1b1b1f;--ink:#f2f1ee;--ink2:#c6c5c0;--muted:#8d8c88;--line:#2e2e33;--oro:#d2ad55;--ok:#5cc98c;--ok-s:#14301f;--warn:#e7b84a;--warn-s:#352a10;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Barlow",system-ui,"Segoe UI",sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:18px;padding-block:26px 60px}
+h1,h2,h3{font-family:"Barlow Condensed","Barlow",system-ui,sans-serif;margin:0;line-height:1.1;text-wrap:balance}
+h1{font-size:clamp(30px,5vw,46px);text-transform:uppercase}h2{font-size:34px;text-transform:uppercase}h3{font-size:20px;letter-spacing:.4px}
+.eyebrow{font:600 13px/1 "Barlow",sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:var(--oro);margin-bottom:10px}
+.lead{color:var(--ink2);font-size:18px;margin:10px 0 0;max-width:70ch}
+.resumen{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:20px}
+.resumen div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.resumen b{display:block;font:700 15px "Barlow Condensed",sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:8px;padding-block:12px;margin-top:22px;border-bottom:1px solid var(--line)}
+.tabs button{font:700 18px "Barlow Condensed",sans-serif;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--line);background:var(--panel);color:var(--ink2);padding:9px 20px;border-radius:8px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.ficha{margin:22px 0 6px}.ficha p{margin:4px 0 0;color:var(--ink2)}.ficha .plan{color:var(--muted);font-size:15px}
+.ad{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin-top:16px;overflow:hidden}
+.ad header{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.num{font:700 16px "Barlow Condensed",sans-serif;background:var(--ink);color:var(--bg);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;flex:none}
+.estado{margin-left:auto;font-size:13px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--ok-s);color:var(--ok);white-space:nowrap}
+.ad.pend .estado{background:var(--warn-s);color:var(--warn)}
+.cuerpo{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:20px;padding:16px}
+.media{min-width:0}.media img{display:block;width:100%;height:auto;border-radius:8px}
+.media img.v{max-width:240px}
+.falta{margin-top:8px;font-size:14px;color:var(--warn)}
+.carr{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.carr img{width:78%;flex:none;scroll-snap-align:start}
+.copy{min-width:0}.lbl{font:600 12px "Barlow",sans-serif;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-top:12px}
+.lbl:first-child{margin-top:0}.copy p{margin:4px 0 0}.tp{font-size:15.5px}.tit{font-weight:600}
+.btn{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:3px 12px;font-weight:600;font-size:14px}
+@media (max-width:720px){.cuerpo{grid-template-columns:1fr}.media img{max-width:420px}}
+footer{margin-top:40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:14px}
+
+.hint{text-transform:none;letter-spacing:0;font-weight:400;color:var(--muted)}
+.nota[hidden]{display:none}
+.ph{aspect-ratio:9/16;max-width:220px;border-radius:10px;background:#111;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;text-align:center;padding:16px}
+.ph b{font:700 22px "Barlow Condensed",sans-serif;letter-spacing:1px;text-transform:uppercase}.ph span{font-size:14px;color:#c9a34e}
+.ed{border:1px dashed var(--line);border-radius:8px;padding:8px 10px;margin-top:4px;outline:none;white-space:pre-wrap}
+.ed:focus{border-color:var(--oro);border-style:solid}
+.ed.cambiado{border-color:var(--warn);border-style:solid}
+.acciones{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.acciones button,.nota button,.todo button{font:600 15px "Barlow",sans-serif;border-radius:8px;padding:9px 16px;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink)}
+.acciones .aprobar{background:var(--ok);border-color:var(--ok);color:#fff}
+.acciones .aprobar.copy{background:var(--warn);border-color:var(--warn)}
+.nota{margin-top:10px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.nota textarea{font:15px "Barlow",sans-serif;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);width:100%}
+.aviso{margin:8px 0 0;font-size:14px;color:var(--ok);min-height:1em}
+.ad.aprobado{border-color:var(--ok);box-shadow:0 0 0 1px var(--ok)}
+.ad.aprobado .estado{background:var(--ok-s);color:var(--ok)}
+.segm{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--oro);border-radius:10px;padding:14px 16px;margin:14px 0 4px}
+.segm-t{display:block;font:700 13px "Barlow Condensed",sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.segm dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;margin:0}
+.segm dt{font-weight:600;color:var(--ink)}.segm dd{margin:0;color:var(--ink2)}.segm a{color:var(--oro)}
+@media (max-width:560px){.segm dl{grid-template-columns:1fr}.segm dd{margin-bottom:6px}}
+.presu{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:14px 0 4px}
+.presu div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.presu b{font:700 13px "Barlow Condensed",sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+.presu .big{font:700 28px/1.1 "Barlow Condensed",sans-serif;color:var(--ink)}
+.presu small{color:var(--muted);font-size:13.5px;line-height:1.4}.presu .hist{color:var(--ink2);font-size:14px}
+.todo{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:14px 0 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.todo .cuenta{font-weight:600}.todo button{background:var(--ok);border-color:var(--ok);color:#fff}
+.como{margin-top:14px;font-size:15px;color:var(--ink2);max-width:80ch}
+
+.idi{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+.ad-video{background:var(--panel);border:1px dashed var(--line);border-radius:14px;margin-top:16px;overflow:hidden}
+.ad-video header{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.estado.pendv{background:var(--warn-s);color:var(--warn)}
+.ad-video .copy p{color:var(--ink2);margin:0}
+.ad-video .ph{max-width:150px}
+.ampliable{cursor:zoom-in}
+#visor{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
+#visor[hidden]{display:none!important}
+#visor img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:6px}
+#visor .cerrar{position:fixed;top:12px;right:16px;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:999px;width:42px;height:42px;font-size:24px;cursor:pointer}
+.confirmar{background:var(--warn-s);color:var(--ink);border-left:4px solid var(--warn);border-radius:10px;padding:12px 16px;margin-top:16px}
+</style></head><body><div class="wrap">
+<div class="eyebrow">Juventus Clinic Detroit · Meta Ads · Para aprobar</div>
+<h1>Detroit: conjunto propio en Meta</h1>
+<p class="lead">Hoy Detroit no tiene conjunto propio: solo la cubre el retargeting. Se propone un conjunto como el de las demás sedes, con dos anuncios: el video de Jesús (ya editado) y el póster de la clínica sin precio. Cada anuncio se muestra con su pieza y su texto, tal como se montaría en Meta. Los textos se pueden corregir aquí mismo y cada anuncio se aprueba con un clic.</p>
+<p class="como"><b>Piezas:</b> el póster es el mismo de los flyers de los socios (mismos niños, skyline de Detroit), sin precio, sin QR y sin franja de socio, con el botón Sign Up. El video es el de Jesús de 32 segundos, con el audio ajustado al volumen que piden Instagram y Meta.</p>
+<p class="como"><b>Segmentación y presupuesto:</b> 25 millas alrededor de la Michigan Stars Facility, padres de 30 a 55 años y USD 12 al día hasta el 28 de diciembre. El detalle está abajo.</p>
+<div class="resumen">
+  <div><b>Listos</b>2 anuncios con su texto: video de Jesús y póster.</div>
+  <div><b>Conjunto</b>DET · 25 millas · USD 12 al día · del 4-nov al 28-dic.</div>
+  <div><b>Pendiente por aprobar</b>Los 2 anuncios y el conjunto.</div>
+</div>
+<p class="como"><b>Cómo aprobar:</b> si el texto está bien, botón <b>Aprobar</b>. Para corregir el texto o el título se escribe directamente sobre ellos; el botón pasa a <b>Aprobar con texto corregido</b> y se guarda la versión nueva. También se puede dejar una nota sin aprobar. Todo queda registrado.</p>
+<section id="det" class="sede" >
+  <div class="ficha"><h2>Detroit</h2><p>28–30 de diciembre · Michigan Stars Facility, Washington, MI · Niños y niñas: 6–14 años de 9 AM a 12 PM y 15–19 años de 1 a 4 PM</p><p class="plan">En inglés, como Chicago y Midland. Los dos anuncios llevan a la página de inscripción de Detroit (/id-camps/137) con su etiqueta propia.</p>
+  </div>
+  <div class="segm"><b class="segm-t">Cómo se configura en Meta (igual que las demás sedes)</b>
+    <dl>
+      <dt>Ubicación</dt><dd>Radio de <b>25 millas</b> alrededor de la Michigan Stars Facility (Washington, MI) (<a href="https://www.google.com/maps?q=42.7777,-83.0006" target="_blank" rel="noopener">ver el punto en el mapa</a>). Cubre el norte del área de Detroit (Macomb y Oakland: Shelby, Sterling Heights, Rochester Hills, Troy, Warren, Utica y alrededores).</dd>
+      <dt>A quién</dt><dd>Personas que viven en esa zona o que estuvieron allí hace poco.</dd>
+      <dt>Edad</dt><dd>Padres de <b>30 a 55 años</b> como público sugerido. Meta puede mostrarlo a otras edades si encuentra familias interesadas (Advantage+), igual que en las otras sedes.</dd>
+      <dt>Dónde se ve</dt><dd>Solo Facebook e Instagram: feed, historias y reels.</dd>
+      <dt>Objetivo</dt><dd>Registros en la web de la sede (botón Register Now), medidos con el píxel.</dd>
+      <dt>Cuenta</dt><dd>Juventus Camps USA, en la campaña de ID Camps, como un conjunto más (DET | WASHINGTON MI 25MI | 30-55 | END 28DEC).</dd>
+      <dt>Fechas</dt><dd>Desde que se encienda (apenas se apruebe) hasta el 28 de diciembre, día en que empieza el camp.</dd>
+    </dl>
+  </div>
+  <div class="presu">
+    <div><b>Presupuesto</b><span class="big">USD 12 al día</span><small>Unos 54 días (del 4-nov al 28-dic) · unos USD 650 en total · revisión al día 7: si cada niño pagado sale en USD 35 o menos, se mantiene o se sube.</small></div>
+    <div><b>Referencia</b><small class="hist">Detroit 2026-27 lleva 11 familias registradas y 5 pagaron sin conjunto propio (1 por retargeting, 1 con el cupón STELLANTIS25 del socio, el resto por otros canales). El retargeting sigue cubriendo la zona.</small></div>
+  </div>
+  <article class="ad" data-id="DET_1">
+  <header><span class="num">1</span><h3>HERO-POSTER (Imagen)</h3><span class="idi">Inglés</span><span class="estado" data-estado>Lista</span></header>
+  <div class="cuerpo">
+    <div class="media"><img src="assets/DET_1.jpg?v=1793596995" data-grande="assets/DET_1_g.jpg?v=1793596995" class="ampliable" alt="HERO-POSTER (Imagen) · Detroit" title="Clic para verla en grande"></div>
+    <div class="copy">
+      <div class="lbl">Texto principal <span class="hint">· se puede editar</span></div>
+      <div class="tp ed" contenteditable="true" spellcheck="true" data-campo="texto">Juventus is coming back to Detroit! ⚪⚫<br><br>Three days of Juventus training this winter break with Juventus Academy coaches: December 28–30 at the Michigan Stars Facility in Washington, MI.<br><br>⚽ Boys &amp; girls<br>🕘 Ages 6–14: 9 AM – 12 PM<br>🕐 Ages 15–19: 1 PM – 4 PM<br><br>Sign up through the link 👇</div>
+      <div class="lbl">Título <span class="hint">· se puede editar</span></div>
+      <div class="tit ed" contenteditable="true" spellcheck="true" data-campo="titulo">Juventus Clinic Detroit · Dec 28–30</div>
+      <div class="lbl">Botón</div><p class="btn">Sign Up</p>
+      <div class="acciones">
+        <button type="button" class="aprobar" data-accion="aprobar">Aprobar</button>
+        <button type="button" class="sec" data-accion="nota">Dejar una nota</button>
+        <button type="button" class="sec deshacer" data-accion="restaurar" hidden>Volver al texto original</button>
+      </div>
+      <div class="nota" hidden><textarea rows="2" placeholder="Nota para este anuncio (opcional)"></textarea><button type="button" class="sec" data-accion="enviar-nota">Enviar nota</button></div>
+      <p class="aviso" data-aviso aria-live="polite"></p>
+    </div>
+  </div>
+</article><article class="ad" data-id="DET_2">
+  <header><span class="num">2</span><h3>VIDEO JESÚS (Video)</h3><span class="idi">Inglés</span><span class="estado" data-estado>Lista</span></header>
+  <div class="cuerpo">
+    <div class="media"><video controls playsinline preload="none" poster="assets/DET_2_poster.jpg?v=1793597038" style="width:100%;max-width:300px;border-radius:8px;display:block"><source src="assets/DET_2_video.mp4?v=1793597038" type="video/mp4"></video></div>
+    <div class="copy">
+      <div class="lbl">Texto principal <span class="hint">· se puede editar</span></div>
+      <div class="tp ed" contenteditable="true" spellcheck="true" data-campo="texto">Detroit, this is your moment! ⚽<br><br>Juventus is coming back to this beautiful city, December 28–30. Show your talent to the Juventus Academy coaches at the Michigan Stars Facility in Washington, MI.<br><br>Boys &amp; girls · Ages 6–14 (9 AM – 12 PM) and 15–19 (1 PM – 4 PM).<br><br>Fino alla fine, forza Juventus! Sign up through the link 👇</div>
+      <div class="lbl">Título <span class="hint">· se puede editar</span></div>
+      <div class="tit ed" contenteditable="true" spellcheck="true" data-campo="titulo">Juventus Clinic Detroit · Dec 28–30</div>
+      <div class="lbl">Botón</div><p class="btn">Sign Up</p>
+      <div class="acciones">
+        <button type="button" class="aprobar" data-accion="aprobar">Aprobar</button>
+        <button type="button" class="sec" data-accion="nota">Dejar una nota</button>
+        <button type="button" class="sec deshacer" data-accion="restaurar" hidden>Volver al texto original</button>
+      </div>
+      <div class="nota" hidden><textarea rows="2" placeholder="Nota para este anuncio (opcional)"></textarea><button type="button" class="sec" data-accion="enviar-nota">Enviar nota</button></div>
+      <p class="aviso" data-aviso aria-live="polite"></p>
+    </div>
+  </div>
+</article>
+</section><div id="visor" hidden role="dialog" aria-label="Imagen en grande"><button class="cerrar" type="button" aria-label="Cerrar">×</button><img alt=""></div><footer>Juventus ID Camps · Revisión de anuncios de Detroit · 02-11-2026 · Página interna, no indexada.</footer>
+</div>
+<script>
+const CFG={"accion": "https://docs.google.com/forms/d/e/1FAIpQLSeGUY8Cv9Ea08X9HkdznY9pzVoUc4Gj-GdymsVTFP86wbE5sw/formResponse", "entry": {"pieza": 333677581, "cuenta": 724853821, "autor": 299801437, "comentario": 1175231019, "copy_corregido": 1649408514, "copy_original": 1637675582, "enviado": 909195940, "tipo": 1605073129, "zona": 1831673234, "fila": 1327618412}, "cuenta": "idcamps_det"};
+const ORIG={"DET_1": {"texto": "Juventus is coming back to Detroit! ⚪⚫\n\nThree days of Juventus training this winter break with Juventus Academy coaches: December 28–30 at the Michigan Stars Facility in Washington, MI.\n\n⚽ Boys & girls\n🕘 Ages 6–14: 9 AM – 12 PM\n🕐 Ages 15–19: 1 PM – 4 PM\n\nSign up through the link 👇", "titulo": "Juventus Clinic Detroit · Dec 28–30", "nombre": "HERO-POSTER (Imagen)"}, "DET_2": {"texto": "Detroit, this is your moment! ⚽\n\nJuventus is coming back to this beautiful city, December 28–30. Show your talent to the Juventus Academy coaches at the Michigan Stars Facility in Washington, MI.\n\nBoys & girls · Ages 6–14 (9 AM – 12 PM) and 15–19 (1 PM – 4 PM).\n\nFino alla fine, forza Juventus! Sign up through the link 👇", "titulo": "Juventus Clinic Detroit · Dec 28–30", "nombre": "VIDEO JESÚS (Video)"}};
+
+const LSK='idc_det_v1';
+const LS={get(){try{return JSON.parse(localStorage.getItem(LSK)||'{}')}catch(e){return {}}},set(v){try{localStorage.setItem(LSK,JSON.stringify(v))}catch(e){}}};
+const norm=t=>(t||'').replace(/\u00a0/g,' ').split('\n').map(l=>l.trim()).join('\n').replace(/\n{3,}/g,'\n\n').trim();
+function leer(ad){return {texto:norm(ad.querySelector('[data-campo="texto"]').innerText),titulo:norm(ad.querySelector('[data-campo="titulo"]').innerText)}}
+function cambiado(ad){const o=ORIG[ad.dataset.id],v=leer(ad);return v.texto!==norm(o.texto)||v.titulo!==norm(o.titulo)}
+function pintar(ad){const c=cambiado(ad),b=ad.querySelector('.aprobar');b.textContent=c?'Aprobar con texto corregido':'Aprobar';b.classList.toggle('copy',c);
+  ad.querySelector('.deshacer').hidden=!c;ad.querySelectorAll('.ed').forEach(e=>e.classList.toggle('cambiado',norm(e.innerText)!==norm(ORIG[ad.dataset.id][e.dataset.campo])))}
+async function enviar(reg){const f=new URLSearchParams();for(const k in CFG.entry)f.append('entry.'+CFG.entry[k],reg[k]??'');
+  try{await fetch(CFG.accion,{method:'POST',mode:'no-cors',body:f});return true}catch(e){return false}}
+function marcar(ad,txt){ad.classList.add('aprobado');ad.querySelector('[data-estado]').textContent=txt}
+async function aprobar(ad){const id=ad.dataset.id,c=cambiado(ad),v=leer(ad),o=ORIG[id];
+  const reg={pieza:id,cuenta:CFG.cuenta,autor:'Alessandro',tipo:c?'aprobado_copy':'aprobado',comentario:'',copy_original:JSON.stringify({texto:o.texto,titulo:o.titulo}),
+    copy_corregido:c?JSON.stringify(v):'',enviado:new Date().toISOString(),zona:'',fila:''};
+  const av=ad.querySelector('[data-aviso]');av.textContent='Guardando…';
+  if(!await enviar(reg)){av.textContent='No se pudo guardar. Revise la conexión e intente de nuevo.';return}
+  const st=LS.get();st[id]={tipo:reg.tipo,v:c?v:null,hora:reg.enviado};LS.set(st);
+  marcar(ad,c?'Aprobado con texto corregido':'Aprobado');av.textContent='Guardado.';contar()}
+async function nota(ad){const ta=ad.querySelector('.nota textarea'),t=ta.value.trim();if(!t)return;const av=ad.querySelector('[data-aviso]');av.textContent='Enviando…';
+  const ok=await enviar({pieza:ad.dataset.id,cuenta:CFG.cuenta,autor:'Alessandro',tipo:'comentario',comentario:t,copy_original:'',copy_corregido:cambiado(ad)?JSON.stringify(leer(ad)):'',enviado:new Date().toISOString(),zona:'',fila:''});
+  av.textContent=ok?'Nota enviada.':'No se pudo enviar la nota.';if(ok){ta.value='';ad.querySelector('.nota').hidden=true}}
+function contar(){document.querySelectorAll('.sede').forEach(s=>{const n=s.querySelectorAll('.ad').length,ap=s.querySelectorAll('.ad.aprobado').length;
+  const c=s.querySelector('.todo .cuenta');if(c)c.textContent=ap+' de '+n+' anuncios aprobados';const b=s.querySelector('.todo button');if(b)b.hidden=ap===n})}
+document.querySelectorAll('.ad').forEach(ad=>{ad.querySelectorAll('.ed').forEach(e=>e.addEventListener('input',()=>pintar(ad)));
+  ad.addEventListener('click',ev=>{const a=ev.target.closest('[data-accion]');if(!a)return;const k=a.dataset.accion;
+    if(k==='aprobar')aprobar(ad);
+    else if(k==='nota'){const n=ad.querySelector('.nota');n.hidden=!n.hidden;if(!n.hidden)n.querySelector('textarea').focus()}
+    else if(k==='enviar-nota')nota(ad);
+    else if(k==='restaurar'){const o=ORIG[ad.dataset.id];ad.querySelector('[data-campo="texto"]').innerText=o.texto;ad.querySelector('[data-campo="titulo"]').innerText=o.titulo;pintar(ad)}})});
+document.querySelectorAll('.sede').forEach(s=>{const d=document.createElement('div');d.className='todo';d.innerHTML='<span class="cuenta"></span><button type="button">Aprobar todos los que faltan de esta sede</button>';
+  s.querySelector('.presu').after(d);d.querySelector('button').addEventListener('click',async()=>{for(const ad of s.querySelectorAll('.ad:not(.aprobado)'))await aprobar(ad)})});
+function aplicar(st){for(const id in st){const ad=document.querySelector('.ad[data-id="'+id+'"]');if(!ad)continue;const x=st[id];
+  if(x.v){ad.querySelector('[data-campo="texto"]').innerText=x.v.texto;ad.querySelector('[data-campo="titulo"]').innerText=x.v.titulo;pintar(ad)}
+  if(x.tipo&&x.tipo.indexOf('aprobado')===0)marcar(ad,x.tipo==='aprobado_copy'?'Aprobado con texto corregido':'Aprobado')}contar()}
+aplicar(LS.get());
+fetch('estado.json?t='+Date.now()).then(r=>r.ok?r.json():{}).then(j=>{if(j&&typeof j==='object')aplicar(j)}).catch(()=>{});
+(function(){function ver(s){document.querySelectorAll('.sede').forEach(e=>{e.hidden=e.id!==s});document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.s===s))}
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{ver(b.dataset.s);try{history.replaceState(null,'','#'+b.dataset.s)}catch(e){}window.scrollTo(0,0)}));
+if((location.hash||'').slice(1)==='bay')ver('bay')})();
+
+(function(){var v=document.getElementById('visor'),im=v.querySelector('img');
+document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('img.ampliable');if(!t)return;im.src=t.dataset.grande||t.src;im.alt=t.alt;v.hidden=false;document.body.style.overflow='hidden';});
+function cerrar(){v.hidden=true;im.removeAttribute('src');document.body.style.overflow='';}
+v.addEventListener('click',cerrar);document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!v.hidden)cerrar();});})();
+</script></body></html>
